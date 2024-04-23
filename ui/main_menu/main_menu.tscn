@@ -1,0 +1,84 @@
+[gd_scene load_steps=4 format=3 uid="uid://gbj8oc5h4nu4"]
+
+[ext_resource type="Script" path="res://ui/main_menu/MainMenu.cs" id="1_57cxm"]
+[ext_resource type="Script" path="res://ui/loading_screen/LoadScene.cs" id="2_lluh2"]
+[ext_resource type="PackedScene" uid="uid://d1ark6a4n7xut" path="res://ui/settings/settings.tscn" id="4_618k7"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_57cxm")
+
+[node name="StartMenu" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.5
+offset_top = -99.5
+offset_right = 67.5
+offset_bottom = 99.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="StartMenu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="StartMenu" type="VBoxContainer" parent="StartMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Game" type="Label" parent="StartMenu/MarginContainer/StartMenu"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Game"
+horizontal_alignment = 1
+
+[node name="Play2D" type="Button" parent="StartMenu/MarginContainer/StartMenu"]
+layout_mode = 2
+text = "Play 2D Scene"
+script = ExtResource("2_lluh2")
+SceneToLoad = "res://utilities/testing/Test2DScene.tscn"
+
+[node name="Play3D" type="Button" parent="StartMenu/MarginContainer/StartMenu"]
+layout_mode = 2
+text = "Play 3D Scene"
+script = ExtResource("2_lluh2")
+SceneToLoad = "res://utilities/testing/Test3DScene.tscn"
+
+[node name="Settings" type="Button" parent="StartMenu/MarginContainer/StartMenu"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit" type="Button" parent="StartMenu/MarginContainer/StartMenu"]
+layout_mode = 2
+text = "Quit"
+
+[node name="Settings" parent="." instance=ExtResource("4_618k7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -283.0
+offset_right = 250.0
+offset_bottom = 283.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="StartMenu/MarginContainer/StartMenu/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="StartMenu/MarginContainer/StartMenu/Quit" to="." method="_on_quit_pressed"]
