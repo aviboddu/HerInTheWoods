@@ -16,7 +16,7 @@ public partial class Setup : EditorScript
 	private const string NAME_FILE = "./.idea/.idea.{0}/.idea/.name";
 
 	private string OldProjectName;
-	private const string NEW_PROJECT_NAME = "NetTemplate";
+	private const string NEW_PROJECT_NAME = "HerInTheWoods";
 
 	// Called when the script is executed (using File -> Run in Script Editor).
 	public override void _Run()
@@ -32,7 +32,7 @@ public partial class Setup : EditorScript
 		ReplaceFileContents(SLN);
 		Move(DOT_SETTINGS);
 		Move(DOT_SETTINGS_USER);
-		
+
 		ProjectSettings.SetSetting("application/config/name", NEW_PROJECT_NAME);
 		ProjectSettings.SetSetting("dotnet/project/assembly_name", NEW_PROJECT_NAME);
 		ProjectSettings.Save();

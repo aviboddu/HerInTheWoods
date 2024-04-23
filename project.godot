@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="NetTemplate"
+config/name="HerInTheWoods"
 run/main_scene="res://ui/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 config/icon="res://icon.svg"
@@ -36,11 +36,7 @@ window/size/resizable=false
 
 [dotnet]
 
-project/assembly_name="NetTemplate"
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/logging/plugin.cfg")
+project/assembly_name="HerInTheWoods"
 
 [input]
 
